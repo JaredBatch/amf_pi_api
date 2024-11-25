@@ -13,7 +13,7 @@ def check_action(success, action_name):
         raise ActionError(f"Error: Expected \"{action_name}\" but action failed")
 
 class Beast:
-    def __init__(self, g_pico = 'COM7', s_pico = "COM11", p_pico = "COM10"):
+    def __init__(self, g_pico = '/dev/ttyACM0', s_pico = "/dev/ttyACM1", p_pico = "/dev/ttyACM3"):
         gantryPico = Talker(g_pico, timeout=1)
         storagePico = Talker(s_pico, timeout=1)
         printerPico = Talker(p_pico, timeout=1)
